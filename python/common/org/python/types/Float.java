@@ -123,7 +123,15 @@ public class Float extends org.python.types.Object {
         __doc__ = ""
     )
     public org.python.Object __ge__(org.python.Object other) {
-        throw new org.python.exceptions.NotImplementedError("float.__ge__() has not been implemented.");
+        //throw new org.python.exceptions.NotImplementedError("float.__ge__() has not been implemented.");
+         if (other instanceof org.python.types.Int) {
+            return new org.python.types.Bool(this.value >= ((org.python.types.Int) other).value);
+        } else if (other instanceof org.python.types.Float) {
+            return new org.python.types.Bool((this.value) >= ((org.python.types.Float) other).value);
+        } else if (other instanceof org.python.types.Bool) {
+            return new org.python.types.Bool(( this.value) >= (((org.python.types.Bool) other).value ? 1 : 0));
+        }
+        throw new org.python.exceptions.TypeError("unorderable types: float() >= " + other.typeName() + "()");   
     }
 
     @org.python.Method(
@@ -184,10 +192,15 @@ public class Float extends org.python.types.Object {
             return new org.python.types.Float(((double) this.value) * ((org.python.types.Float) other).value);
         } else if (other instanceof org.python.types.Bool) {
             return new org.python.types.Float(this.value * (((org.python.types.Bool) other).value ? 1 : 0));
-        }
-        throw new org.python.exceptions.TypeError("unsupported operand type(s) for *: 'int' and '" + other.typeName() + "'");        
+        } else if (other instanceof org.python.types.Dict) {
+            return new org.python.exceptions.TypeError("unsupported operand type(s) for *: 'float' and '" + other.typeName() + "'");
+        } else if (other instanceof org.python.types.NoneType) {
+            return new org.python.exceptions.TypeError("unsupported operand type(s) for *: 'float' and '" + other.typeName() + "'");
+        } else if (other instanceof org.python.types.Set) {
+            return new org.python.exceptions.TypeError("unsupported operand type(s) for *: 'float' and '" + other.typeName() + "'");
+        }       
                 
-       
+        throw new org.python.exceptions.NotImplementedError("float.__mul__() has not been implemented.");
     }
 
     @org.python.Method(
@@ -346,4 +359,5 @@ public class Float extends org.python.types.Object {
     public org.python.Object __round__(org.python.Object ndigits) {
         throw new org.python.exceptions.NotImplementedError("float.__round__() has not been implemented.");
     }
+
 }
