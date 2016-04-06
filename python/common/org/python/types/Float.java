@@ -353,4 +353,3 @@ public class Float extends org.python.types.Object {
         throw new org.python.exceptions.NotImplementedError("float.__round__() has not been implemented.");
     }
 }
-
