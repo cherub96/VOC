@@ -324,6 +324,9 @@ class InplaceFloatOperationTests(InplaceOperationTestCase, TranspileTestCase):
         'test_multiply_complex',
         'test_multiply_frozenset',
         'test_multiply_list',
+        'test_multiply_dict',
+        'test_multiply_set',
+        'test_multiply_none',
         'test_multiply_str',
         'test_multiply_tuple',
 
