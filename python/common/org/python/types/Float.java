@@ -218,6 +218,16 @@ public class Float extends org.python.types.Object {
         __doc__ = ""
     )
     public org.python.Object __mul__(org.python.Object other) {
+        
+        if (other instanceof org.python.types.Str) {
+            throw new org.python.exceptions.TypeError("can't multiply sequence by non-int of type '" + "float" + "'");
+        } else if (other instanceof org.python.types.Int) {
+            return new org.python.types.Float(this.value * ((org.python.types.Int) other).value);
+        } else if (other instanceof org.python.types.Float) {
+            return new org.python.types.Float(((double) this.value) * ((org.python.types.Float) other).value);
+        } else if (other instanceof org.python.types.Bool) {
+            return new org.python.types.Float(this.value * (((org.python.types.Bool) other).value ? 1 : 0));
+        }
         throw new org.python.exceptions.NotImplementedError("float.__mul__() has not been implemented.");
     }
 
