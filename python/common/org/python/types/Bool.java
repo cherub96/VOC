@@ -79,7 +79,23 @@ public class Bool extends org.python.types.Object {
         __doc__ = ""
     )
     public org.python.Object __eq__(org.python.Object other) {
+        
+        if (other instanceof org.python.types.Int) {
+            
+            return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1 : 0) == ((org.python.types.Int) other).value);
+        } else if (other instanceof org.python.types.Bool) {
+            
+            return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1 : 0) == (((org.python.types.Bool) other).value ? 1 : 0));
+        } else if (other instanceof org.python.types.Float) {
+            
+            return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1.0 : 0.0) == (((org.python.types.Float) other).value));
+        } else if (other instanceof org.python.types.Str) {
+            
+            return new org.python.types.Bool(false);
+        } 
+        
         throw new org.python.exceptions.NotImplementedError("bool.__eq__() has not been implemented.");
+    
     }
 
     @org.python.Method(
