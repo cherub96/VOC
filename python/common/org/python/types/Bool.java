@@ -116,6 +116,19 @@ public class Bool extends org.python.types.Object {
         __doc__ = ""
     )
     public org.python.Object __ge__(org.python.Object other) {
+        if (other instanceof org.python.types.Int) {
+            
+            return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1 : 0) >= ((org.python.types.Int) other).value);
+        } else if (other instanceof org.python.types.Bool) {
+            
+            return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1 : 0) >= (((org.python.types.Bool) other).value ? 1 : 0));
+        } else if (other instanceof org.python.types.Float) {
+            
+            return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1.0 : 0.0) >= (((org.python.types.Float) other).value));
+        } else if (other instanceof org.python.types.Str) {
+            
+            throw new org.python.exceptions.TypeError("unorderable types: bool() >= " + other.typeName() + "()");
+        }
         throw new org.python.exceptions.NotImplementedError("bool.__ge__() has not been implemented.");
     }
 
