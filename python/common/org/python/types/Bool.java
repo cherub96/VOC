@@ -73,6 +73,12 @@ public class Bool extends org.python.types.Object {
             return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1.0 : 0.0) < (((org.python.types.Float) other).value));
         } else if (other instanceof org.python.types.Str) {
             throw new org.python.exceptions.TypeError("unorderable types: bool() < " + other.typeName() + "()");
+        } else if (other instanceof org.python.types.Dict) {
+            throw new org.python.exceptions.TypeError("unorderable types: bool() < " + other.typeName() + "()");
+        } else if (other instanceof org.python.types.NoneType) {
+            throw new org.python.exceptions.TypeError("unorderable types: bool() < " + other.typeName() + "()");
+        } else if (other instanceof org.python.types.Set) {
+            throw new org.python.exceptions.TypeError("unorderable types: bool() < " + other.typeName() + "()");
         }
         throw new org.python.exceptions.NotImplementedError("bool.__lt__() has not been implemented.");
     }
@@ -88,6 +94,12 @@ public class Bool extends org.python.types.Object {
         } else if (other instanceof org.python.types.Float) {
             return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1.0 : 0.0) <= (((org.python.types.Float) other).value));
         } else if (other instanceof org.python.types.Str) {
+            throw new org.python.exceptions.TypeError("unorderable types: bool() <= " + other.typeName() + "()");
+        } else if (other instanceof org.python.types.Dict) {
+            throw new org.python.exceptions.TypeError("unorderable types: bool() <= " + other.typeName() + "()");
+        } else if (other instanceof org.python.types.NoneType) {
+            throw new org.python.exceptions.TypeError("unorderable types: bool() <= " + other.typeName() + "()");
+        } else if (other instanceof org.python.types.Set) {
             throw new org.python.exceptions.TypeError("unorderable types: bool() <= " + other.typeName() + "()");
         }
         throw new org.python.exceptions.NotImplementedError("bool.__le__() has not been implemented.");
@@ -106,7 +118,13 @@ public class Bool extends org.python.types.Object {
             return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1.0 : 0.0) == (((org.python.types.Float) other).value));
         } else if (other instanceof org.python.types.Str) {
             return new org.python.types.Bool(false);
-        } 
+        } else if (other instanceof org.python.types.Dict) {
+            return new org.python.types.Bool(false);
+        } else if (other instanceof org.python.types.NoneType) {
+            return new org.python.types.Bool(false);
+        } else if (other instanceof org.python.types.Set) {
+            return new org.python.types.Bool(false);
+        }
         
         throw new org.python.exceptions.NotImplementedError("bool.__eq__() has not been implemented.");
     
@@ -124,6 +142,12 @@ public class Bool extends org.python.types.Object {
             return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1.0 : 0.0) != (((org.python.types.Float) other).value));
         } else if (other instanceof org.python.types.Str) {
             return new org.python.types.Bool(true);
+        } else if (other instanceof org.python.types.Dict) {
+            return new org.python.types.Bool(true);
+        } else if (other instanceof org.python.types.NoneType) {
+            return new org.python.types.Bool(true);
+        } else if (other instanceof org.python.types.Set) {
+            return new org.python.types.Bool(true);
         }
         throw new org.python.exceptions.NotImplementedError("bool.__ne__() has not been implemented.");
     }
@@ -140,7 +164,14 @@ public class Bool extends org.python.types.Object {
             return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1.0 : 0.0) > (((org.python.types.Float) other).value));
         } else if (other instanceof org.python.types.Str) {
             throw new org.python.exceptions.TypeError("unorderable types: bool() > " + other.typeName() + "()");
+        } else if (other instanceof org.python.types.Dict) {
+            throw new org.python.exceptions.TypeError("unorderable types: bool() > " + other.typeName() + "()");
+        } else if (other instanceof org.python.types.NoneType) {
+            throw new org.python.exceptions.TypeError("unorderable types: bool() > " + other.typeName() + "()");
+        } else if (other instanceof org.python.types.Set) {
+            throw new org.python.exceptions.TypeError("unorderable types: bool() > " + other.typeName() + "()");
         }
+        
         throw new org.python.exceptions.NotImplementedError("bool.__gt__() has not been implemented.");
     }
 
@@ -155,6 +186,12 @@ public class Bool extends org.python.types.Object {
         } else if (other instanceof org.python.types.Float) {
             return new org.python.types.Bool( (((org.python.types.Bool) this).value ? 1.0 : 0.0) >= (((org.python.types.Float) other).value));
         } else if (other instanceof org.python.types.Str) {
+            throw new org.python.exceptions.TypeError("unorderable types: bool() >= " + other.typeName() + "()");
+        } else if (other instanceof org.python.types.Dict) {
+            throw new org.python.exceptions.TypeError("unorderable types: bool() >= " + other.typeName() + "()");
+        } else if (other instanceof org.python.types.NoneType) {
+            throw new org.python.exceptions.TypeError("unorderable types: bool() >= " + other.typeName() + "()");
+        } else if (other instanceof org.python.types.Set) {
             throw new org.python.exceptions.TypeError("unorderable types: bool() >= " + other.typeName() + "()");
         }
         throw new org.python.exceptions.NotImplementedError("bool.__ge__() has not been implemented.");
