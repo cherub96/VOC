@@ -43,16 +43,12 @@ class BinaryBoolOperationTests(BinaryOperationTestCase, TranspileTestCase):
         'test_and_complex',
         'test_and_frozenset',
         'test_and_int',
-        'test_and_list',
-        'test_and_tuple',
 
         'test_eq_bytearray',
         'test_eq_bytes',
         'test_eq_class',
         'test_eq_complex',
         'test_eq_frozenset',
-        'test_eq_list',
-        'test_eq_tuple',
 
         'test_floor_divide_bytearray',
         'test_floor_divide_bytes',
@@ -65,24 +61,18 @@ class BinaryBoolOperationTests(BinaryOperationTestCase, TranspileTestCase):
         'test_ge_class',
         'test_ge_complex',
         'test_ge_frozenset',
-        'test_ge_list',
-        'test_ge_tuple',
 
         'test_gt_bytearray',
         'test_gt_bytes',
         'test_gt_class',
         'test_gt_complex',
         'test_gt_frozenset',
-        'test_gt_list',
-        'test_gt_tuple',
 
         'test_le_bytearray',
         'test_le_bytes',
         'test_le_class',
         'test_le_complex',
         'test_le_frozenset',
-        'test_le_list',
-        'test_le_tuple',
 
         'test_lshift_bool',
         'test_lshift_bytearray',
@@ -104,8 +94,6 @@ class BinaryBoolOperationTests(BinaryOperationTestCase, TranspileTestCase):
         'test_lt_class',
         'test_lt_complex',
         'test_lt_frozenset',
-        'test_lt_list',
-        'test_lt_tuple',
 
         'test_modulo_bytearray',
         'test_modulo_bytes',
@@ -126,8 +114,6 @@ class BinaryBoolOperationTests(BinaryOperationTestCase, TranspileTestCase):
         'test_ne_class',
         'test_ne_complex',
         'test_ne_frozenset',
-        'test_ne_list',
-        'test_ne_tuple',
 
         'test_or_bytearray',
         'test_or_bytes',
@@ -135,8 +121,6 @@ class BinaryBoolOperationTests(BinaryOperationTestCase, TranspileTestCase):
         'test_or_complex',
         'test_or_frozenset',
         'test_or_int',
-        'test_or_list',
-        'test_or_tuple',
 
         'test_power_bytearray',
         'test_power_bytes',
@@ -179,8 +163,6 @@ class BinaryBoolOperationTests(BinaryOperationTestCase, TranspileTestCase):
         'test_subtract_class',
         'test_subtract_complex',
         'test_subtract_frozenset',
-        'test_subtract_list',
-        'test_subtract_tuple',
 
         'test_true_divide_bool',
         'test_true_divide_bytearray',
@@ -203,8 +185,6 @@ class BinaryBoolOperationTests(BinaryOperationTestCase, TranspileTestCase):
         'test_xor_complex',
         'test_xor_frozenset',
         'test_xor_int',
-        'test_xor_list',
-        'test_xor_tuple',
     ]
 
 
@@ -322,8 +302,6 @@ class InplaceBoolOperationTests(InplaceOperationTestCase, TranspileTestCase):
         'test_subtract_float',
         'test_subtract_frozenset',
         'test_subtract_int',
-        'test_subtract_list',
-        'test_subtract_tuple',
 
         'test_true_divide_bool',
         'test_true_divide_bytearray',
