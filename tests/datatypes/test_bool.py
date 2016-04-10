@@ -207,8 +207,6 @@ class InplaceBoolOperationTests(InplaceOperationTestCase, TranspileTestCase):
         'test_and_complex',
         'test_and_frozenset',
         'test_and_int',
-        'test_and_list',
-        'test_and_tuple',
 
         'test_floor_divide_bool',
         'test_floor_divide_bytearray',
@@ -261,8 +259,6 @@ class InplaceBoolOperationTests(InplaceOperationTestCase, TranspileTestCase):
         'test_or_complex',
         'test_or_frozenset',
         'test_or_int',
-        'test_or_list',
-        'test_or_tuple',
 
         'test_power_bool',
         'test_power_bytearray',
@@ -324,6 +320,4 @@ class InplaceBoolOperationTests(InplaceOperationTestCase, TranspileTestCase):
         'test_xor_complex',
         'test_xor_frozenset',
         'test_xor_int',
-        'test_xor_list',
-        'test_xor_tuple',
     ]
